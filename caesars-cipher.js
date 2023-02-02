@@ -9,18 +9,18 @@
 
 function rot13(str) {
     const letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
-    return str
-        .split('')
-        .map((wordLetter, wordIndex) => {
-            letters.includes(wordLetter) && letters.map((letter, letterIndex) => {
-                if (letter == wordLetter) {
-                    letters[letterIndex - 13]
-                        ? split[wordIndex] = letters[letterIndex - 13]
-                        : split[wordIndex] = letters[letterIndex + 13]
-                }
-            })
+    const split = str.split('')
+    split.map((wordLetter, wordIndex) => {
+        letters.includes(wordLetter) && letters.map((letter, letterIndex) => {
+            if (letter == wordLetter) {
+                letters[letterIndex - 13]
+                    ? split[wordIndex] = letters[letterIndex - 13]
+                    : split[wordIndex] = letters[letterIndex + 13]
+            }
         })
-        .join('');
+    })
+    console.log(split.join(''))
+    return split.join('')
 }
 
-rot13("SERR PBQR PNZC");
+rot13("ZNXRF AB FRAFR V XABJ");
